@@ -7,7 +7,7 @@
 #include <geometry_msgs/msg/pose_stamped.hpp>
 #include <pluginlib/class_loader.hpp>
 
-#include "voronoi_diagram.hpp"
+#include "/voronoi_global_planner/voronoi_diagram.hpp"
 
 namespace voronoi_global_planner {
 

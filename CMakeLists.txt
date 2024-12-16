@@ -42,7 +42,7 @@ ament_target_dependencies(voronoi_global_planner
 )
 
 # Export the plugin
-pluginlib_export_plugin_description_file(nav2_core global_planner_plugin.xml)
+pluginlib_export_plugin_description_file(nav2_core voronoi_global_planner_plugin.xml)
 
 # Install headers
 install(

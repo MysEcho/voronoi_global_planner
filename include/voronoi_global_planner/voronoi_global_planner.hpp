@@ -7,7 +7,7 @@
 #include <geometry_msgs/msg/pose_stamped.hpp>
 #include <pluginlib/class_loader.hpp>
 #include <nav2_costmap_2d/costmap_2d_ros.hpp>
-#include <tf2_ros/buffer.hpp>
+#include <tf2_ros/buffer.h>
 
 #include "voronoi_diagram.hpp"
 
@@ -22,7 +22,7 @@ public:
         const rclcpp_lifecycle::LifecycleNode::SharedPtr& parent,
         const std::string& name,
         const std::shared_ptr<tf2_ros::Buffer>& tf_buffer,
-        const std::shared_ptr<nav2_costmap_2d::Costmap2DROS>& costmap_ros) override;
+        const std::shared_ptr<nav2_costmap_2d::Costmap2DROS>& costmap_ros);
 
     void cleanup() override;
     void activate() override;

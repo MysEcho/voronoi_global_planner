@@ -1,0 +1,8 @@
+<library path="voronoi_global_planner">
+  <class 
+    name="voronoi_global_planner/VoronoiGlobalPlanner" 
+    type="voronoi_global_planner::VoronoiGlobalPlanner" 
+    base_class_type="nav2_core::GlobalPlanner">
+    <description>Voronoi Diagram based Global Path Planner</description>
+  </class>
+</library>

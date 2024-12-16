@@ -6,6 +6,8 @@
 #include <nav_msgs/msg/path.hpp>
 #include <geometry_msgs/msg/pose_stamped.hpp>
 #include <pluginlib/class_loader.hpp>
+#include <nav2_costmap_2d/costmap_2d_ros.hpp>
+#include <tf2_ros/buffer.hpp>
 
 #include "voronoi_diagram.hpp"
 
@@ -14,13 +16,13 @@ namespace voronoi_global_planner {
 class VoronoiGlobalPlanner : public nav2_core::GlobalPlanner {
 public:
     VoronoiGlobalPlanner() = default;
-    ~VoronoiGlobalPlanner() = default;
+    ~VoronoiGlobalPlanner() override = default;
 
     void configure(
         const rclcpp_lifecycle::LifecycleNode::SharedPtr& parent,
-        std::string name,
-        std::shared_ptr<tf2_ros::Buffer> tf_buffer,
-        std::shared_ptr<nav2_costmap_2d::Costmap2DROS> costmap_ros) override;
+        const std::string& name,
+        const std::shared_ptr<tf2_ros::Buffer>& tf_buffer,
+        const std::shared_ptr<nav2_costmap_2d::Costmap2DROS>& costmap_ros) override;
 
     void cleanup() override;
     void activate() override;
@@ -32,6 +34,7 @@ public:
 
 private:
     rclcpp_lifecycle::LifecycleNode::SharedPtr node_;
+    std::string name_;
     std::shared_ptr<tf2_ros::Buffer> tf_buffer_;
     std::shared_ptr<nav2_costmap_2d::Costmap2DROS> costmap_ros_;
     
